@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "bettertime",
+  "version": "${version}",
+  "name": "BetterTime",
+  "description": "",
+  "authors": ["HiedaCamellia"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.hiedacamellia.bettertime.client.BettertimeClient"
+    ],
+    "main": [
+      "org.hiedacamellia.bettertime.Bettertime"
+    ]
+  },
+  "mixins": [
+    "bettertime.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">=1.19.2"
+  }
+}
