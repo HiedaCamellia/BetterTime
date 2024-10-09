@@ -1,6 +1,7 @@
 package org.hiedacamellia.bettertime.core.mixin;
 
 
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Gui;
@@ -20,7 +21,7 @@ import static org.hiedacamellia.bettertime.core.config.Config.*;
 public class GuiMixin {
 
     @Inject(method = "render",at = @At("TAIL"))
-    private void render(GuiGraphics guiGraphics, float f, CallbackInfo ci){
+    private void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci){
 
         if (!showDateHud.get()) return;
         Minecraft minecraft = Minecraft.getInstance();

@@ -29,7 +29,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "curse.maven:forge-config-api-port-fabric-547434:4583000"
+    modImplementation "curse.maven:forge-config-api-port-fabric-547434:5772128"
 }
 
 processResources {

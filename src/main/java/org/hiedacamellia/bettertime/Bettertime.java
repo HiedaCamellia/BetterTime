@@ -1,13 +1,15 @@
 package org.hiedacamellia.bettertime;
 
-import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
+
+import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fml.config.ModConfig;
+
+import net.neoforged.fml.config.ModConfig;
 import org.hiedacamellia.bettertime.core.command.BetterTimeCommand;
 import org.hiedacamellia.bettertime.core.config.Config;
 import org.slf4j.Logger;
@@ -18,7 +20,7 @@ public class Bettertime implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ForgeConfigRegistry.INSTANCE.register(MODID,ModConfig.Type.COMMON, Config.configSpec);
+        NeoForgeConfigRegistry.INSTANCE.register(MODID, ModConfig.Type.COMMON, Config.configSpec);
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment)->{
             BetterTimeCommand.register(dispatcher);
         });
